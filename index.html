@@ -3,372 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPS - Productos Naturales</title>
+    <meta name="description" content="HAPS - Frutas y Verduras Deshidratadas Naturalmente al Sol">
+    <title>HAPS - Deshidratados Naturales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* General Styles */
+        /* Reset y Estilos Base */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        :root {
+            --verde-primario: #2c5f2d;
+            --naranja-secundario: #F5989D;
+            --beige-fondo: #FFF5E0;
+            --texto-oscuro: #222626;
         }
 
         body {
-            font-family: 'Open Sans', sans-serif;
-            background: #fff;
-            color: #333;
+            font-size: 16px;
             line-height: 1.6;
+            color: var(--texto-oscuro);
+            background: var(--beige-fondo);
         }
 
-        h1, h2, h3, h4, h5 {
-            font-weight: 300;
-            text-align: center;
-        }
-
-        p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        section {
-            display: block;
-            width: 100%;
-        }
-
-        /* 12 Column Grid Layout */
-        .col-1 { width: 8.33%; }
-        .col-2 { width: 16.66%; }
-        .col-3 { width: 25%; }
-        .col-4 { width: 33.33%; }
-        .col-5 { width: 41.66%; }
-        .col-6 { width: 50%; }
-        .col-7 { width: 58.33%; }
-        .col-8 { width: 66.66%; }
-        .col-9 { width: 75%; }
-        .col-10 { width: 83.33%; }
-        .col-11 { width: 91.66%; }
-        .col-12 { width: 100%; }
-
-        .row {
-            width: 1170px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        /* Section-1 (Hero Section) */
+        /* Header */
         .section-1 {
-            padding: 4% 0 20% 0;
-            background: #27ae60 url('https://images.unsplash.com/photo-1501594907352-cd6729a5412c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8MTl8fGZyZXNofGVufDB8fHx8fDE2NTc3OTkwMjI&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-        }
-
-        .section-1 .logo {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-1 h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-1 p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-button {
-            background-color: #2ecc71;
+            background: linear-gradient(rgba(44, 95, 45, 0.9), 
+                        rgba(245, 152, 157, 0.8)),
+                        url('https://images.unsplash.com/photo-1607305387299-3a70d5d2bfcf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            padding: 100px 0 300px;
             color: white;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
         }
 
-        .cta-button:hover {
-            background-color: #27ae60;
-        }
-
-        /* Section-2 (Benefits Section) */
-        .section-2 {
-            padding: 5% 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        .section-2 h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-2 p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .benefits-list {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .benefit-item {
-            background-color: #fff;
-            padding: 20px;
-            width: 250px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .benefit-item h4 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            color: #2c3e50;
-        }
-
-        .benefit-item p {
-            color: #7f8c8d;
-        }
-
-        /* Section-3 (Products Section) */
-        .section-3 {
-            padding: 5% 0;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .section-3 h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .product-list {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .product-item {
-            width: 250px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .product-item img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .product-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .product-item p {
-            color: #7f8c8d;
-        }
-
-        /* Section-4 (Contact Section) */
-        .section-4 {
-            padding: 5% 0;
-            background-color: #ecf0f1;
-            text-align: center;
-        }
-
-        .section-4 h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .section-4 p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background-color: #27ae60;
+        .logo {
+            font-family: 'Merriweather', serif;
+            font-size: 2.5em;
+            font-weight: 900;
             color: white;
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
-        .contact-form button:hover {
-            background-color: #2ecc71;
+        /* Beneficios */
+        .section-3 .gal-img {
+            padding: 40px;
+            background-size: cover;
+            min-height: 300px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .gal-img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Productos */
+        .producto-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* Proceso Natural */
+        .proceso-section {
+            padding: 80px 0;
+            background: url('https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80');
+            background-attachment: fixed;
+            color: white;
         }
 
         /* Footer */
         footer {
-            padding: 5% 0;
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-        }
-
-        footer h4 {
-            margin-bottom: 1rem;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        footer .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        footer .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        footer .social-links a:hover {
-            color: #2ecc71;
+            background: var(--verde-primario);
+            color: white;
+            padding: 50px 0;
         }
 
         /* Media Queries */
-        @media only screen and (max-width: 768px) {
-            .benefits-list,
-            .product-list {
-                flex-direction: column;
-                align-items: center;
+        @media (max-width: 768px) {
+            .section-1 {
+                padding: 50px 0 150px;
+            }
+            
+            .logo {
+                font-size: 1.8em;
             }
         }
     </style>
 </head>
 <body>
     <main>
-        <!-- Hero Section -->
+        <!-- Sección Hero -->
         <section class="section-1">
             <div class="row">
-                <div class="logo col-12">
-                    HAPS
-                </div>
+                <div class="logo col-5">HAPS</div>
             </div>
-            <h1>Productos 100% Naturales</h1>
-            <p>Sin azúcares ni conservantes añadidos. ¡Descubre el sabor auténtico de la naturaleza!</p>
-            <a href="#productos" class="cta-button">Ver Productos</a>
-        </section>
-
-        <!-- Benefits Section -->
-        <section class="section-2">
-            <h2>Beneficios de Nuestros Productos</h2>
-            <p>En HAPS, ofrecemos productos que preservan todos los nutrientes y el sabor natural. ¡Elige lo más saludable!</p>
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <h4>100% Natural</h4>
-                    <p>Sin azúcares ni conservantes. Solo lo mejor de la naturaleza.</p>
+            <div class="row">
+                <div class="col-6">
+                    <h1>Nutrición Natural<br>Deshidratada al Sol</h1>
+                    <p>Preservando el sabor y nutrientes mediante métodos ancestrales</p>
+                    <a href="#productos" class="cta-button">Ver Productos</a>
                 </div>
-                <div class="benefit-item">
-                    <h4>Preservación de Nutrientes</h4>
-                    <p>Método ancestral que conserva todos los beneficios de nuestras frutas y verduras.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Saludable</h4>
-                    <p>Ideal para quienes buscan una opción saludable y deliciosa en su dieta.</p>
+                <div class="col-6">
+                    <img src="img/mezcla-frutas.png" alt="Mezcla de frutas deshidratadas">
                 </div>
             </div>
         </section>
 
-        <!-- Products Section -->
-        <section class="section-3" id="productos">
-            <h2>Nuestros Productos</h2>
-            <div class="product-list">
-                <div class="product-item">
-                    <img src="https://images.unsplash.com/photo-1571767640-510a8776f7a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8Mnx8ZnJ1aXR8ZW58MHx8fHx8fDE2NTc4MTg5NTM&ixlib=rb-1.2.1&q=80&w=1080" alt="Frutas Deshidratadas">
-                    <h3>Frutas Deshidratadas</h3>
-                    <p>Deliciosas frutas preservadas al sol, conservando su sabor y frescura natural.</p>
+        <!-- Beneficios -->
+        <section class="section-3">
+            <div class="row">
+                <div class="gal-img" style="background: var(--verde-primario)">
+                    <h3><i class="fas fa-sun"></i> Secado Natural</h3>
+                    <p>Utilizamos únicamente energía solar en nuestro proceso</p>
                 </div>
-                <div class="product-item">
-                    <img src="https://images.unsplash.com/photo-1598468957033-ea4bc946e5e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8MXx8dmVyZHVyYXMlMjBzZXh8ZW58MHx8fHx8fDE2NTc4MTk2MzE&ixlib=rb-1.2.1&q=80&w=1080" alt="Verduras Deshidratadas">
-                    <h3>Verduras Deshidratadas</h3>
-                    <p>Verduras saludables, perfectas para añadir a cualquier plato o snack.</p>
+                <div class="gal-img" style="background: var(--naranja-secundario)">
+                    <h3><i class="fas fa-heart"></i> 100% Natural</h3>
+                    <p>Sin aditivos ni conservantes artificiales</p>
                 </div>
+                <!-- Más beneficios... -->
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="section-4">
-            <h2>Contáctanos</h2>
-            <p>Si tienes alguna duda o consulta, no dudes en escribirnos. ¡Estamos aquí para ayudarte!</p>
-            <form class="contact-form">
-                <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Correo" required>
-                <textarea name="mensaje" placeholder="Tu Mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
+        <!-- Proceso Natural -->
+        <section class="proceso-section">
+            <div class="row">
+                <h2>Nuestro Proceso Ancestral</h2>
+                <div class="col-4">
+                    <div class="paso">
+                        <div class="numero">1</div>
+                        <h4>Selección Natural</h4>
+                        <p>Frutas y verduras de cultivos locales</p>
+                    </div>
+                </div>
+                <!-- Más pasos... -->
+            </div>
+        </section>
+
+        <!-- Productos -->
+        <section id="productos" class="section-7">
+            <div class="row">
+                <div class="col-4">
+                    <div class="producto-card">
+                        <img src="img/paquete-frutas.jpg" alt="Mezcla de frutas">
+                        <h4>Mix Frutal Tropical</h4>
+                        <p>Mango, piña, banana y coco deshidratados</p>
+                        <div class="precio">$9.99</div>
+                    </div>
+                </div>
+                <!-- Más productos... -->
+            </div>
         </section>
 
         <!-- Footer -->
         <footer>
-            <h4>Conéctate con Nosotros</h4>
-            <p>Síguenos en nuestras redes sociales para más actualizaciones y ofertas.</p>
-            <div class="social-links">
-                <a href="#" target="_blank">Facebook</a>
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">Twitter</a>
+            <div class="row">
+                <div class="col-4">
+                    <h4>Contacto</h4>
+                    <p>contacto@hapsfoods.com</p>
+                    <p>+52 55 1234 5678</p>
+                </div>
+                <div class="col-4">
+                    <h4>Síguenos</h4>
+                    <div class="redes-sociales">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2025 HAPS - Todos los derechos reservados</p>
         </footer>
     </main>
-
-    <script>
-        // JavaScript for form validation (basic example)
-        document.querySelector('.contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.querySelector('input[name="nombre"]');
-            const email = document.querySelector('input[name="email"]');
-            const message = document.querySelector('textarea[name="mensaje"]');
-            
-            if (name.value && email.value && message.value) {
-                alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
-                name.value = '';
-                email.value = '';
-                message.value = '';
-            } else {
-                alert('Por favor, completa todos los campos.');
-            }
-        });
-    </script>
 </body>
 </html>
