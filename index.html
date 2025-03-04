@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deshidratadora HAPS</title>
+    <title>HAPS - Productos Naturales</title>
     <style>
         /* General */
         * {
@@ -14,19 +14,23 @@
 
         body {
             font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
             line-height: 1.6;
-            background-color: #f4f4f4;
         }
 
+        /* Header */
         header {
             background-color: #2c3e50;
-            color: #ecf0f1;
-            padding: 2rem 0;
+            color: white;
+            padding: 20px 0;
             text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
         nav ul {
@@ -36,44 +40,49 @@
 
         nav ul li {
             display: inline;
-            margin: 0 20px;
+            margin: 0 15px;
         }
 
         nav ul li a {
-            color: #ecf0f1;
+            color: white;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
 
         nav ul li a:hover {
             text-decoration: underline;
         }
 
+        /* Hero */
         .hero {
             background: url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+            height: 80vh;
             color: white;
             text-align: center;
-            padding: 6rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         .hero h2 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
         }
 
         .hero p {
             font-size: 1.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .cta-button {
             background-color: #27ae60;
-            padding: 15px 30px;
+            padding: 15px 40px;
             color: white;
             text-decoration: none;
-            font-size: 1.2rem;
             border-radius: 5px;
+            font-size: 1.2rem;
             transition: background-color 0.3s ease;
         }
 
@@ -81,63 +90,28 @@
             background-color: #2ecc71;
         }
 
-        /* Sección Beneficios */
-        .beneficios {
-            padding: 3rem 1rem;
-            background-color: #ecf0f1;
-            text-align: center;
-        }
-
-        .beneficios h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .beneficios ul {
-            list-style-type: none;
-            padding: 0;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            text-align: left;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .beneficios li {
-            font-size: 1.2rem;
-            background-color: #ffffff;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .beneficios li:hover {
-            transform: translateY(-5px);
-        }
-
-        /* Sección Productos */
+        /* Productos */
         .productos {
-            padding: 4rem 1rem;
+            padding: 4rem 2rem;
+            background-color: #fff;
             text-align: center;
         }
 
         .productos h2 {
             font-size: 2.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .product-list {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
             gap: 30px;
-            margin-top: 30px;
         }
 
         .product-item {
-            width: 45%;
-            background-color: white;
+            width: 250px;
+            background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
@@ -146,29 +120,64 @@
         }
 
         .product-item img {
-            max-width: 100%;
+            width: 100%;
+            height: auto;
             border-radius: 10px;
             margin-bottom: 15px;
         }
 
         .product-item h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
 
         .product-item p {
-            font-size: 1.1rem;
+            font-size: 1rem;
+            margin-bottom: 15px;
         }
 
         .product-item:hover {
+            transform: translateY(-10px);
+        }
+
+        /* Beneficios */
+        .beneficios {
+            background-color: #ecf0f1;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .beneficios h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .beneficios ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .beneficios li {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .beneficios li:hover {
             transform: translateY(-5px);
         }
 
-        /* Sección Testimonios */
+        /* Testimonios */
         .testimonios {
             background-color: #27ae60;
             color: white;
-            padding: 4rem 1rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
 
@@ -177,54 +186,57 @@
             margin-bottom: 2rem;
         }
 
-        .testimonios .testimonial {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
+        .testimonial {
+            display: inline-block;
+            margin: 20px;
+            text-align: left;
+            max-width: 400px;
         }
 
-        .testimonios .testimonial img {
+        .testimonial img {
             width: 80px;
             height: 80px;
             border-radius: 50%;
-            margin-right: 20px;
+            margin-right: 15px;
         }
 
-        .testimonios .testimonial p {
+        .testimonial p {
             font-size: 1.2rem;
             font-style: italic;
-            max-width: 800px;
         }
 
-        /* Sección Contacto */
+        .testimonial h4 {
+            font-weight: bold;
+        }
+
+        /* Contacto */
         .contacto {
-            padding: 3rem 1rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
 
         .contacto h2 {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
 
         .contacto form {
-            max-width: 500px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
         .contacto input, .contacto textarea {
             width: 100%;
             padding: 15px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            margin-bottom: 15px;
             border-radius: 5px;
+            border: 1px solid #ccc;
             font-size: 1.1rem;
         }
 
         .contacto button {
             background-color: #27ae60;
-            padding: 15px 30px;
+            padding: 15px 40px;
             color: white;
             font-size: 1.2rem;
             border: none;
@@ -240,34 +252,30 @@
         footer {
             background-color: #2c3e50;
             color: white;
-            text-align: center;
             padding: 1rem 0;
+            text-align: center;
         }
 
         /* Responsive */
-        @media screen and (max-width: 768px) {
+        @media (max-width: 768px) {
             .beneficios ul {
                 grid-template-columns: 1fr;
             }
 
             .product-list {
                 flex-direction: column;
-            }
-
-            .product-item {
-                width: 100%;
-                margin-bottom: 30px;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>HAPS - Productos 100% Naturales</h1>
+        <h1>HAPS - Productos Naturales</h1>
         <nav>
             <ul>
-                <li><a href="#beneficios">Beneficios</a></li>
                 <li><a href="#productos">Productos</a></li>
+                <li><a href="#beneficios">Beneficios</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#contacto">Contacto</a></li>
             </ul>
@@ -275,19 +283,9 @@
     </header>
 
     <section class="hero">
-        <h2>Frutas y Verduras Deshidratadas de Forma Natural</h2>
-        <p>Preserva su sabor, aroma, color y nutrientes, ¡sin azúcares ni conservantes añadidos!</p>
+        <h2>Frutas y Verduras Deshidratadas al Sol</h2>
+        <p>Productos 100% naturales, sin azúcares ni conservantes añadidos.</p>
         <a href="#productos" class="cta-button">Ver Productos</a>
-    </section>
-
-    <section id="beneficios" class="beneficios">
-        <h2>Beneficios de Nuestros Productos</h2>
-        <ul>
-            <li><strong>100% Natural:</strong> Sin azúcares ni conservantes.</li>
-            <li><strong>Preservación de Nutrientes:</strong> Método ancestral que conserva los nutrientes.</li>
-            <li><strong>Sabor y Aroma:</strong> Frutas y verduras con un sabor y aroma frescos.</li>
-            <li><strong>Saludable:</strong> Perfecto para una dieta equilibrada.</li>
-        </ul>
     </section>
 
     <section id="productos" class="productos">
@@ -296,25 +294,36 @@
             <div class="product-item">
                 <img src="https://via.placeholder.com/300x200" alt="Frutas Deshidratadas">
                 <h3>Frutas Deshidratadas</h3>
-                <p>Deliciosas frutas preservadas al sol, con todo su sabor natural y frescura.</p>
+                <p>Frutas frescas deshidratadas al sol para conservar todo su sabor natural.</p>
             </div>
             <div class="product-item">
                 <img src="https://via.placeholder.com/300x200" alt="Verduras Deshidratadas">
                 <h3>Verduras Deshidratadas</h3>
-                <p>Verduras saludables y nutritivas, perfectas para cualquier plato.</p>
+                <p>Verduras nutritivas y saludables, perfectas para cualquier preparación.</p>
             </div>
         </div>
+    </section>
+
+    <section id="beneficios" class="beneficios">
+        <h2>Beneficios de Nuestros Productos</h2>
+        <ul>
+            <li><strong>100% Natural:</strong> Sin azúcares ni conservantes.</li>
+            <li><strong>Preservación de Nutrientes:</strong> Método ancestral que conserva los nutrientes.</li>
+            <li><strong>Rico Sabor:</strong> Sabor fresco y natural en cada bocado.</li>
+        </ul>
     </section>
 
     <section id="testimonios" class="testimonios">
         <h2>Lo que dicen nuestros clientes</h2>
         <div class="testimonial">
             <img src="https://via.placeholder.com/80" alt="Cliente 1">
-            <p>"Las frutas deshidratadas de HAPS tienen un sabor increíble. ¡Me encantan!" - Maria S.</p>
+            <p>"Las frutas deshidratadas de HAPS son deliciosas, ¡las llevo en mi mochila todo el día!"</p>
+            <h4>Maria S.</h4>
         </div>
         <div class="testimonial">
             <img src="https://via.placeholder.com/80" alt="Cliente 2">
-            <p>"Una opción saludable y deliciosa. ¡Ideal para mis ensaladas!" - Juan P.</p>
+            <p>"Me encanta el sabor de las verduras deshidratadas, perfectas para mis sopas." </p>
+            <h4>Juan P.</h4>
         </div>
     </section>
 
