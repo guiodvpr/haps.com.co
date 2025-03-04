@@ -63,7 +63,7 @@
         /* Section-1 (Hero Section) */
         .section-1 {
             padding: 4% 0 20% 0;
-            background: #27ae60 url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+            background: #27ae60 url('https://images.unsplash.com/photo-1501594907352-cd6729a5412c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8MTl8fGZyZXNofGVufDB8fHx8fDE2NTc3OTkwMjI&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
             color: #fff;
             text-align: center;
         }
@@ -315,12 +315,12 @@
             <h2>Nuestros Productos</h2>
             <div class="product-list">
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x200" alt="Frutas Deshidratadas">
+                    <img src="https://images.unsplash.com/photo-1571767640-510a8776f7a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8Mnx8ZnJ1aXR8ZW58MHx8fHx8fDE2NTc4MTg5NTM&ixlib=rb-1.2.1&q=80&w=1080" alt="Frutas Deshidratadas">
                     <h3>Frutas Deshidratadas</h3>
                     <p>Deliciosas frutas preservadas al sol, conservando su sabor y frescura natural.</p>
                 </div>
                 <div class="product-item">
-                    <img src="https://via.placeholder.com/300x200" alt="Verduras Deshidratadas">
+                    <img src="https://images.unsplash.com/photo-1598468957033-ea4bc946e5e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8MXx8dmVyZHVyYXMlMjBzZXh8ZW58MHx8fHx8fDE2NTc4MTk2MzE&ixlib=rb-1.2.1&q=80&w=1080" alt="Verduras Deshidratadas">
                     <h3>Verduras Deshidratadas</h3>
                     <p>Verduras saludables, perfectas para añadir a cualquier plato o snack.</p>
                 </div>
@@ -351,5 +351,24 @@
             <p>&copy; 2025 HAPS - Todos los derechos reservados</p>
         </footer>
     </main>
+
+    <script>
+        // JavaScript for form validation (basic example)
+        document.querySelector('.contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.querySelector('input[name="nombre"]');
+            const email = document.querySelector('input[name="email"]');
+            const message = document.querySelector('textarea[name="mensaje"]');
+            
+            if (name.value && email.value && message.value) {
+                alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
+                name.value = '';
+                email.value = '';
+                message.value = '';
+            } else {
+                alert('Por favor, completa todos los campos.');
+            }
+        });
+    </script>
 </body>
 </html>
