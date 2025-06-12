@@ -1,374 +1,226 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAPS - Productos Naturales</title>
-    <style>
-        /* General Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sol Snacks | Snacks Deshidratados al Sol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-bg: #faf7f2;
+      --main-green: #90b77d;
+      --accent-green: #5a7850;
+      --beige: #fff9ef;
+      --shadow: 0 6px 32px rgba(90, 119, 80, 0.10);
+      --text-main: #2e3c28;
+      --text-soft: #6a7c60;
+      --orange: #ffb84c;
+      --badge-bg: #eaf4ea;
+      --badge-text: #5a7850;
+      --border-radius: 2rem;
+    }
 
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background: #fff;
-            color: #333;
-            line-height: 1.6;
-        }
+    html, body {
+      background: var(--main-bg);
+      font-family: 'Quicksand', 'Montserrat', Arial, sans-serif;
+      color: var(--text-main);
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
 
-        h1, h2, h3, h4, h5 {
-            font-weight: 300;
-            text-align: center;
-        }
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.2rem;
+    }
 
-        p {
-            font-size: 1rem;
-            color: #666;
-            line-height: 1.6;
-        }
+    /* Hero Section */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 70vh;
+      background: linear-gradient(120deg, #fff9ef 70%, #eaf4ea 100%);
+      border-radius: 0 0 60px 60px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .hero img {
+      width: 96px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 2px 12px #9dbd8e33);
+      border-radius: 50%;
+      background: #fff;
+      padding: 0.3rem;
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--main-green);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-soft);
+      margin-bottom: 2.2rem;
+      line-height: 1.5;
+    }
+    .cta-btn {
+      background: var(--main-green);
+      color: #fff;
+      padding: 1rem 2.6rem;
+      border: none;
+      border-radius: var(--border-radius);
+      font-size: 1.25rem;
+      font-family: 'Quicksand', Arial, sans-serif;
+      letter-spacing: .03em;
+      font-weight: 700;
+      box-shadow: var(--shadow);
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .cta-btn:hover {
+      background: var(--accent-green);
+    }
+    /* Badges */
+    .badges {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 1.5rem 0;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: var(--badge-bg);
+      color: var(--badge-text);
+      border-radius: 1.2rem;
+      padding: 0.35rem 1.3rem;
+      font-size: .95rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      box-shadow: 0 2px 10px #dbeede66;
+      margin-bottom: 0.5rem;
+    }
 
-        a {
-            text-decoration: none;
-        }
+    /* Benefits Section */
+    .benefits-section {
+      padding: 3rem 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .benefits-section h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+    .benefits-list {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      justify-content: center;
+    }
+    .benefit-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      width: 250px;
+      padding: 2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.15s;
+    }
+    .benefit-card:hover { transform: translateY(-6px) scale(1.04); }
+    .benefit-card img {
+      width: 46px;
+      margin-bottom: 1rem;
+    }
+    .benefit-card h4 {
+      font-size: 1.13rem;
+      margin-bottom: 0.4rem;
+      color: var(--main-green);
+      font-weight: 700;
+    }
+    .benefit-card p {
+      font-size: 0.98rem;
+      color: var(--text-soft);
+    }
 
-        section {
-            display: block;
-            width: 100%;
-        }
+    /* Products Section */
+    .products-section {
+      padding: 3rem 0 2rem 0;
+      text-align: center;
+    }
+    .products-section h2 {
+      color: var(--main-green);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+    }
+    .product-list {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .product-card {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      width: 260px;
+      padding: 1.3rem 1rem 2rem 1rem;
+      transition: transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .product-card:hover { transform: translateY(-4px) scale(1.025); }
+    .product-card img {
+      width: 95%;
+      border-radius: 1.2rem;
+      margin-bottom: 1.1rem;
+      box-shadow: 0 2px 12px #b8d8be22;
+    }
+    .product-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent-green);
+      font-weight: 700;
+    }
+    .product-card p {
+      color: var(--text-soft);
+      font-size: 1.01rem;
+    }
 
-        /* 12 Column Grid Layout */
-        .col-1 { width: 8.33%; }
-        .col-2 { width: 16.66%; }
-        .col-3 { width: 25%; }
-        .col-4 { width: 33.33%; }
-        .col-5 { width: 41.66%; }
-        .col-6 { width: 50%; }
-        .col-7 { width: 58.33%; }
-        .col-8 { width: 66.66%; }
-        .col-9 { width: 75%; }
-        .col-10 { width: 83.33%; }
-        .col-11 { width: 91.66%; }
-        .col-12 { width: 100%; }
-
-        .row {
-            width: 1170px;
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        /* Section-1 (Hero Section) */
-        .section-1 {
-            padding: 4% 0 20% 0;
-            background: #27ae60 url('https://images.unsplash.com/photo-1501594907352-cd6729a5412c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8MTl8fGZyZXNofGVufDB8fHx8fDE2NTc3OTkwMjI&ixlib=rb-1.2.1&q=80&w=1080') no-repeat center center/cover;
-            color: #fff;
-            text-align: center;
-        }
-
-        .section-1 .logo {
-            font-size: 3rem;
-            font-weight: 700;
-            color: #fff;
-            text-transform: uppercase;
-            margin-bottom: 1rem;
-        }
-
-        .section-1 h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .section-1 p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-button {
-            background-color: #2ecc71;
-            color: white;
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background-color: #27ae60;
-        }
-
-        /* Section-2 (Benefits Section) */
-        .section-2 {
-            padding: 5% 0;
-            background-color: #f4f4f4;
-            text-align: center;
-        }
-
-        .section-2 h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .section-2 p {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .benefits-list {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .benefit-item {
-            background-color: #fff;
-            padding: 20px;
-            width: 250px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .benefit-item h4 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
-            color: #2c3e50;
-        }
-
-        .benefit-item p {
-            color: #7f8c8d;
-        }
-
-        /* Section-3 (Products Section) */
-        .section-3 {
-            padding: 5% 0;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .section-3 h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .product-list {
-            display: flex;
-            justify-content: space-around;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .product-item {
-            width: 250px;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .product-item img {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-
-        .product-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
-
-        .product-item p {
-            color: #7f8c8d;
-        }
-
-        /* Section-4 (Contact Section) */
-        .section-4 {
-            padding: 5% 0;
-            background-color: #ecf0f1;
-            text-align: center;
-        }
-
-        .section-4 h2 {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .section-4 p {
-            font-size: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1rem;
-        }
-
-        .contact-form button {
-            background-color: #27ae60;
-            color: white;
-            padding: 12px 20px;
-            font-size: 1.1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #2ecc71;
-        }
-
-        /* Footer */
-        footer {
-            padding: 5% 0;
-            background-color: #2c3e50;
-            color: #fff;
-            text-align: center;
-        }
-
-        footer h4 {
-            margin-bottom: 1rem;
-        }
-
-        footer p {
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        footer .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        footer .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        footer .social-links a:hover {
-            color: #2ecc71;
-        }
-
-        /* Media Queries */
-        @media only screen and (max-width: 768px) {
-            .benefits-list,
-            .product-list {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-    </style>
-</head>
-<body>
-    <main>
-        <!-- Hero Section -->
-        <section class="section-1">
-            <div class="row">
-                <div class="logo col-12">
-                    HAPS
-                </div>
-            </div>
-            <h1>Productos 100% Naturales</h1>
-            <p>Sin azúcares ni conservantes añadidos. ¡Descubre el sabor auténtico de la naturaleza!</p>
-            <a href="#productos" class="cta-button">Ver Productos</a>
-        </section>
-
-        <!-- Benefits Section -->
-        <section class="section-2">
-            <h2>Beneficios de Nuestros Productos</h2>
-            <p>En HAPS, ofrecemos productos que preservan todos los nutrientes y el sabor natural. ¡Elige lo más saludable!</p>
-            <div class="benefits-list">
-                <div class="benefit-item">
-                    <h4>100% Natural</h4>
-                    <p>Sin azúcares ni conservantes. Solo lo mejor de la naturaleza.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Preservación de Nutrientes</h4>
-                    <p>Método ancestral que conserva todos los beneficios de nuestras frutas y verduras.</p>
-                </div>
-                <div class="benefit-item">
-                    <h4>Saludable</h4>
-                    <p>Ideal para quienes buscan una opción saludable y deliciosa en su dieta.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Products Section -->
-        <section class="section-3" id="productos">
-            <h2>Nuestros Productos</h2>
-            <div class="product-list">
-                <div class="product-item">
-                    <img src="https://images.unsplash.com/photo-1571767640-510a8776f7a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8Mnx8ZnJ1aXR8ZW58MHx8fHx8fDE2NTc4MTg5NTM&ixlib=rb-1.2.1&q=80&w=1080" alt="Frutas Deshidratadas">
-                    <h3>Frutas Deshidratadas</h3>
-                    <p>Deliciosas frutas preservadas al sol, conservando su sabor y frescura natural.</p>
-                </div>
-                <div class="product-item">
-                    <img src="https://images.unsplash.com/photo-1598468957033-ea4bc946e5e2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wzNjI1NXwwfDF8c2VhY2h8MXx8dmVyZHVyYXMlMjBzZXh8ZW58MHx8fHx8fDE2NTc4MTk2MzE&ixlib=rb-1.2.1&q=80&w=1080" alt="Verduras Deshidratadas">
-                    <h3>Verduras Deshidratadas</h3>
-                    <p>Verduras saludables, perfectas para añadir a cualquier plato o snack.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section class="section-4">
-            <h2>Contáctanos</h2>
-            <p>Si tienes alguna duda o consulta, no dudes en escribirnos. ¡Estamos aquí para ayudarte!</p>
-            <form class="contact-form">
-                <input type="text" name="nombre" placeholder="Tu Nombre" required>
-                <input type="email" name="email" placeholder="Tu Correo" required>
-                <textarea name="mensaje" placeholder="Tu Mensaje" required></textarea>
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <h4>Conéctate con Nosotros</h4>
-            <p>Síguenos en nuestras redes sociales para más actualizaciones y ofertas.</p>
-            <div class="social-links">
-                <a href="#" target="_blank">Facebook</a>
-                <a href="#" target="_blank">Instagram</a>
-                <a href="#" target="_blank">Twitter</a>
-            </div>
-            <p>&copy; 2025 HAPS - Todos los derechos reservados</p>
-        </footer>
-    </main>
-
-    <script>
-        // JavaScript for form validation (basic example)
-        document.querySelector('.contact-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.querySelector('input[name="nombre"]');
-            const email = document.querySelector('input[name="email"]');
-            const message = document.querySelector('textarea[name="mensaje"]');
-            
-            if (name.value && email.value && message.value) {
-                alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
-                name.value = '';
-                email.value = '';
-                message.value = '';
-            } else {
-                alert('Por favor, completa todos los campos.');
-            }
-        });
-    </script>
-</body>
-</html>
+    /* Testimonials Section */
+    .testimonials-section {
+      padding: 2.3rem 0 2rem 0;
+      background: var(--beige);
+      border-radius: 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 2px 24px #d2c4b622;
+      text-align: center;
+    }
+    .testimonials-section h2 {
+      color: var(--accent-green);
+      margin-bottom: 1.5rem;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    .testimonial-list {
+      display: flex;
+      gap: 1.2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .testimonial {
+      back
