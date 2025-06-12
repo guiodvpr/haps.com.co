@@ -223,4 +223,228 @@
       flex-wrap: wrap;
     }
     .testimonial {
-      back
+      background: #fff;
+      border-radius: 1.3rem;
+      box-shadow: 0 1px 10px #b8d8be26;
+      padding: 1.1rem 1rem;
+      max-width: 240px;
+      min-width: 200px;
+      font-size: .97rem;
+      color: var(--text-soft);
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial strong {
+      display: block;
+      color: var(--main-green);
+      font-size: 1rem;
+      font-weight: 700;
+      margin-top: .7rem;
+      font-style: normal;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      padding: 3rem 0 2rem 0;
+      text-align: center;
+    }
+    .contact-section h2 {
+      color: var(--main-green);
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+    }
+    .contact-form {
+      background: #fff;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      max-width: 440px;
+      margin: 1.5rem auto 0 auto;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+    .contact-form input, .contact-form textarea {
+      border: 1px solid #e6e6e6;
+      padding: 0.95rem;
+      border-radius: 1.1rem;
+      font-size: 1rem;
+      font-family: 'Quicksand', Arial, sans-serif;
+      background: var(--beige);
+      resize: none;
+    }
+    .contact-form textarea { min-height: 90px; }
+    .contact-form button {
+      background: var(--accent-green);
+      color: #fff;
+      font-size: 1.1rem;
+      border: none;
+      padding: .9rem 1.6rem;
+      border-radius: 2rem;
+      cursor: pointer;
+      font-weight: 700;
+      transition: background 0.2s;
+    }
+    .contact-form button:hover { background: var(--main-green); }
+
+    /* Footer */
+    footer {
+      padding: 2.2rem 0;
+      background: var(--main-green);
+      color: #fff;
+      text-align: center;
+      border-radius: 3rem 3rem 0 0;
+      margin-top: 3rem;
+      font-size: 1.01rem;
+      box-shadow: 0 -4px 16px #90b77d44;
+    }
+    .footer-social {
+      display: flex;
+      gap: 1.3rem;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+    .footer-social a {
+      color: #fff;
+      font-size: 1.45rem;
+      transition: color 0.22s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .footer-social a:hover {
+      color: var(--orange);
+    }
+
+    @media (max-width: 850px) {
+      main { padding: 0 .5rem; }
+      .product-list, .benefits-list, .testimonial-list { flex-direction: column; align-items: center; }
+      .hero { min-height: 55vh; }
+    }
+    @media (max-width: 550px) {
+      .hero h1 { font-size: 1.4rem; }
+      .hero img { width: 72px; }
+      .benefit-card, .product-card { width: 94vw; max-width: 370px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <!-- Hero / Intro -->
+    <section class="hero">
+      <img src="https://cdn-icons-png.flaticon.com/512/3163/3163494.png" alt="Logo Sol Snacks" loading="lazy">
+      <h1>Sol Snacks<br><span style="font-size:1.45rem;font-weight:400;">Deshidratados al Sol</span></h1>
+      <p>Snacks naturales, crujientes y llenos de vida. Disfruta lo mejor de la fruta y la verdura local, conservando todos sus nutrientes gracias al sol colombiano. Sin azúcar ni aditivos. Pura naturaleza, puro sabor.</p>
+      <div class="badges">
+        <span class="badge">100% Orgánico</span>
+        <span class="badge">Sin Azúcar Añadido</span>
+        <span class="badge">Vegano</span>
+        <span class="badge">Hecho en Colombia</span>
+      </div>
+      <a href="#productos" class="cta-btn">Descúbrelo</a>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section" id="beneficios">
+      <h2>¿Por Qué Sol Snacks?</h2>
+      <div class="benefits-list">
+        <div class="benefit-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/4257/4257483.png" alt="Natural">
+          <h4>Sin Procesados</h4>
+          <p>Cero aditivos, cero azúcar. Solo fruta y verdura seleccionada, tal cual la da la tierra.</p>
+        </div>
+        <div class="benefit-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/590/590685.png" alt="Sol">
+          <h4>Secado al Sol</h4>
+          <p>Método ancestral: bajo el sol, conservamos enzimas, sabor y aroma original.</p>
+        </div>
+        <div class="benefit-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/126/126122.png" alt="Saludable">
+          <h4>Salud y Sostenibilidad</h4>
+          <p>Snacks que nutren tu cuerpo y respetan el planeta: envases biodegradables y producto local.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section" id="productos">
+      <h2>Nuestros Snacks Estrella</h2>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1571767640-510a8776f7a2?fit=crop&w=600&q=80" alt="Frutas Deshidratadas">
+          <h3>Frutas al Sol</h3>
+          <p>Banano, mango, piña, manzana y más: perfectas como snack o topping. Sabor dulce y natural.</p>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1598468957033-ea4bc946e5e2?fit=crop&w=600&q=80" alt="Verduras Chips">
+          <h3>Chips de Verdura</h3>
+          <p>Remolacha, zanahoria, zucchini y batata. Crocantes y llenos de fibra, perfectos para picar.</p>
+        </div>
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?fit=crop&w=600&q=80" alt="Mix tropical">
+          <h3>Mix Tropical</h3>
+          <p>La mejor mezcla de frutas y verduras deshidratadas. ¡Dulce, salado, natural!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <h2>Lo que dicen nuestros clientes</h2>
+      <div class="testimonial-list">
+        <div class="testimonial">
+          “¡Nunca imaginé que lo saludable pudiera saber tan rico! Mis hijos los aman.”<strong>- Laura G.</strong>
+        </div>
+        <div class="testimonial">
+          “Sol Snacks me acompaña siempre en la oficina. No me hinchan, no me dan sueño. Y son de aquí.”<strong>- Sebastián V.</strong>
+        </div>
+        <div class="testimonial">
+          “La diferencia se nota: el sabor real de la fruta, no como los snacks industriales.”<strong>- Martha Q.</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section" id="contacto">
+      <h2>¿Quieres ser distribuidor o hacer tu pedido?</h2>
+      <form class="contact-form" autocomplete="off">
+        <input type="text" name="nombre" placeholder="Tu Nombre" required>
+        <input type="email" name="email" placeholder="Tu Correo" required>
+        <textarea name="mensaje" placeholder="¿En qué podemos ayudarte?" required></textarea>
+        <button type="submit">Enviar Mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <strong>Sol Snacks</strong> &middot; El snack que nace del sol <br>
+      <span style="font-size:.93rem;">Hecho en Colombia con amor · 2025</span>
+    </div>
+    <div class="footer-social">
+      <a href="#" aria-label="Facebook" title="Facebook"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" width="23" style="vertical-align:middle;"></a>
+      <a href="#" aria-label="Instagram" title="Instagram"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" width="23" style="vertical-align:middle;"></a>
+      <a href="#" aria-label="WhatsApp" title="WhatsApp"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" width="23" style="vertical-align:middle;"></a>
+    </div>
+    <div>
+      <span style="font-size:.88rem;">&copy; 2025 Sol Snacks · Todos los derechos reservados</span>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelector('.contact-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = this.nombre.value.trim();
+      const email = this.email.value.trim();
+      const message = this.mensaje.value.trim();
+      if (name && email && message) {
+        alert('¡Gracias por tu mensaje! Te responderemos pronto.');
+        this.reset();
+      } else {
+        alert('Por favor completa todos los campos.');
+      }
+    });
+  </script>
+</body>
+</html>
